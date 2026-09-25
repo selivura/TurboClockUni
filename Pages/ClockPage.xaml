@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="TurboClock.Pages.ClockPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:TurboClock.Controls"
+    BackgroundColor="Black">
+
+    <Grid
+        Padding="30">
+
+        <VerticalStackLayout
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Spacing="10">
+
+            <controls:ClockWithDate
+                x:Name="Clock"
+                HorizontalOptions="Center"
+                Height="120"
+                WidthRequest="300"
+                SegmentColor="Lime"
+                ClockBackgroundColor="Black"
+                DateColor="White"
+                DateFontSize="20" />
+
+        </VerticalStackLayout>
+
+    </Grid>
+
+</ContentPage>

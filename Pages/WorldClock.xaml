@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="TurboClock.Pages.WorldClockPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:TurboClock.Controls"
+    BackgroundColor="Black">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="30">
+
+            <VerticalStackLayout Spacing="5">
+
+                <Label
+                    x:Name="LocalTimeZoneLabel"
+                    TextColor="White"
+                    FontSize="20"
+                    HorizontalTextAlignment="Center" />
+
+                <controls:ClockWithDate
+                    x:Name="LocalClock"
+                    WidthRequest="300"
+                    HorizontalOptions="Fill"
+                    ShowSeconds="True"
+                    SegmentColor="Lime"
+                    ClockBackgroundColor="Black" />
+
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="5">
+
+                <Label
+                    Text="New York"
+                    TextColor="White"
+                    FontSize="20"
+                    HorizontalTextAlignment="Center" />
+
+                <controls:ClockWithDate
+                    x:Name="NewYorkClock"
+                    WidthRequest="300"
+                    HorizontalOptions="Fill"
+                    ShowSeconds="True"
+                    SegmentColor="Cyan"
+                    ClockBackgroundColor="Black" />
+
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="5">
+
+                <Label
+                    Text="Tokyo"
+                    TextColor="White"
+                    FontSize="20"
+                    HorizontalTextAlignment="Center" />
+
+                <controls:ClockWithDate
+                    x:Name="TokyoClock"
+                    WidthRequest="300"
+                    HorizontalOptions="Fill"
+                    ShowSeconds="True"
+                    SegmentColor="Orange"
+                    ClockBackgroundColor="Black" />
+
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>
