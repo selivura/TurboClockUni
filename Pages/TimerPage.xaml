@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="TurboClock.Pages.TimerPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:TurboClock.Controls"
+    BackgroundColor="Black">
+
+    <Grid
+        Padding="30"
+        RowDefinitions="*,Auto,Auto">
+
+        <controls:DigitalClock
+            x:Name="TimerClock"
+            Grid.Row="0"
+            HeightRequest="120"
+            WidthRequest="300"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            ShowSeconds="True"
+            SegmentColor="Red"
+            ClockBackgroundColor="Black" />
+
+        <Grid
+            Grid.Row="1"
+            ColumnDefinitions="*,*,*"
+            ColumnSpacing="10"
+            Margin="0,20">
+
+            <VerticalStackLayout Grid.Column="0">
+                <Label
+                    Text="Hours"
+                    TextColor="White"
+                    HorizontalTextAlignment="Center" />
+
+                <Entry
+                    x:Name="HoursEntry"
+                    Text="0"
+                    Keyboard="Numeric"
+                    TextColor="White"
+                    BackgroundColor="#202020"
+                    HorizontalTextAlignment="Center" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Column="1">
+                <Label
+                    Text="Minutes"
+                    TextColor="White"
+                    HorizontalTextAlignment="Center" />
+
+                <Entry
+                    x:Name="MinutesEntry"
+                    Text="0"
+                    Keyboard="Numeric"
+                    TextColor="White"
+                    BackgroundColor="#202020"
+                    HorizontalTextAlignment="Center" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Column="2">
+                <Label
+                    Text="Seconds"
+                    TextColor="White"
+                    HorizontalTextAlignment="Center" />
+
+                <Entry
+                    x:Name="SecondsEntry"
+                    Text="0"
+                    Keyboard="Numeric"
+                    TextColor="White"
+                    BackgroundColor="#202020"
+                    HorizontalTextAlignment="Center" />
+            </VerticalStackLayout>
+
+        </Grid>
+
+        <HorizontalStackLayout
+            Grid.Row="2"
+            HorizontalOptions="Center"
+            Spacing="10">
+
+            <Button
+                Text="Start"
+                Clicked="OnStartClicked" />
+
+            <Button
+                Text="Pause"
+                Clicked="OnPauseClicked" />
+
+            <Button
+                Text="Reset"
+                Clicked="OnResetClicked" />
+
+        </HorizontalStackLayout>
+
+    </Grid>
+
+</ContentPage>
