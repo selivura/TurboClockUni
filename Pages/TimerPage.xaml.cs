@@ -33,6 +33,7 @@ public partial class TimerPage : ContentPage
             {
                 _remainingTime = TimeSpan.Zero;
                 _isRunning = false;
+                TimerCompletionSound.Play();
             }
 
             UpdateDisplay();
@@ -41,9 +42,7 @@ public partial class TimerPage : ContentPage
         return true;
     }
 
-    private void OnStartClicked(
-        object sender,
-        EventArgs e)
+    private void OnStartClicked(object sender, EventArgs e)
     {
         if (!_isRunning && _remainingTime == TimeSpan.Zero)
         {
@@ -56,16 +55,12 @@ public partial class TimerPage : ContentPage
         }
     }
 
-    private void OnPauseClicked(
-        object sender,
-        EventArgs e)
+    private void OnPauseClicked(object sender, EventArgs e)
     {
         _isRunning = false;
     }
 
-    private void OnResetClicked(
-        object sender,
-        EventArgs e)
+    private void OnResetClicked(object sender, EventArgs e)
     {
         _isRunning = false;
         _remainingTime = ReadInputTime();

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <ContentPage
     x:Class="TurboClock.Pages.WorldClockPage"
@@ -10,63 +10,21 @@
     <ScrollView>
 
         <VerticalStackLayout
+            x:Name="ClocksLayout"
             Padding="30"
             Spacing="30">
+            <HorizontalStackLayout Spacing="10">
+                <Picker
+                    x:Name="TimezonePicker"
+                    Title="Select timezone"
+                    ItemsSource="{Binding Timezones}"
+                    ItemDisplayBinding="{Binding DisplayName}"
+                    HorizontalOptions="FillAndExpand" />
 
-            <VerticalStackLayout Spacing="5">
-
-                <Label
-                    x:Name="LocalTimeZoneLabel"
-                    TextColor="White"
-                    FontSize="20"
-                    HorizontalTextAlignment="Center" />
-
-                <controls:ClockWithDate
-                    x:Name="LocalClock"
-                    WidthRequest="300"
-                    HorizontalOptions="Fill"
-                    ShowSeconds="True"
-                    SegmentColor="Lime"
-                    ClockBackgroundColor="Black" />
-
-            </VerticalStackLayout>
-
-            <VerticalStackLayout Spacing="5">
-
-                <Label
-                    Text="New York"
-                    TextColor="White"
-                    FontSize="20"
-                    HorizontalTextAlignment="Center" />
-
-                <controls:ClockWithDate
-                    x:Name="NewYorkClock"
-                    WidthRequest="300"
-                    HorizontalOptions="Fill"
-                    ShowSeconds="True"
-                    SegmentColor="Cyan"
-                    ClockBackgroundColor="Black" />
-
-            </VerticalStackLayout>
-
-            <VerticalStackLayout Spacing="5">
-
-                <Label
-                    Text="Tokyo"
-                    TextColor="White"
-                    FontSize="20"
-                    HorizontalTextAlignment="Center" />
-
-                <controls:ClockWithDate
-                    x:Name="TokyoClock"
-                    WidthRequest="300"
-                    HorizontalOptions="Fill"
-                    ShowSeconds="True"
-                    SegmentColor="Orange"
-                    ClockBackgroundColor="Black" />
-
-            </VerticalStackLayout>
-
+                <Button
+                    Text="Add"
+                    Clicked="OnAddTimezoneClicked" />
+            </HorizontalStackLayout>
         </VerticalStackLayout>
 
     </ScrollView>
