@@ -23,7 +23,7 @@ jobs:
         run: dotnet workload install maui
 
       - name: Restore dependencies
-        run: dotnet restore TurboClock.sln
+        run: dotnet restore TurboClock.csproj --runtime win-x64
 
       - name: Build
-        run: dotnet build TurboClock.sln --configuration Release --no-restore
+        run: dotnet build TurboClock.csproj --configuration Release --runtime win-x64 --no-restore
